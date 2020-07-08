@@ -38,10 +38,9 @@
   display: flex;
   width: 210px;
   margin-top: 1rem;
-
   @media (max-width: 480px) {
-    align-self: center;
-    margin: auto;
+    align-self: flex-end;
+    margin-right: 30px;
   }
 }
 
@@ -75,14 +74,14 @@
   color: #00677d;
 }
 
-.CartItem-selected-color-container {
+.checkout-product-color-dot-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 120px;
 }
 
-.CartItem-selected-color {
+.checkout-product-color-dot {
   width: 10px;
   height: 10px;
   border-radius: 50px;

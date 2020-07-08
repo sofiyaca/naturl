@@ -14,20 +14,20 @@ export default function WishlistItem({
 }) {
   const productPath = `/product/${itemId}`;
   return (
-    <div className="Wishlist-Item">
-      <div className="Wishlist-Item-description">
-        <div className="Wishlist-Item-thumbnail">
+    <div className="PurchasedItem">
+      <div className="PurchasedItem-description">
+        <div className="PurchasedItem-thumbnail">
           <img
-            className="Wishlist-Item-thumbnail-img"
+            className="PurchasedItem-thumbnail-img"
             alt={name}
             src={thumbnail}
           />
         </div>
-        <Link to={productPath} className="Wishlist-Item-product-link">
+        <Link to={productPath} className="PurchasedItem-product-link">
           {name}
         </Link>
       </div>
-      <div className="Wishlist-Item-details">
+      <div className="PurchasedItem-details">
         <div>${price}</div>
         <div>
           <CloseCircleOutlined onClick={() => removeFromWishList(itemId)} />

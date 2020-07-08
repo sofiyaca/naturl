@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from "react";
+import PropTypes from "prop-types";
 import firebase from "../../../firebase";
 import { Link } from "@reach/router";
 import { Alert } from "antd";
 import "../FormContainer.scss";
 
-const SignIn = () => {
+const Login = () => {
   const [errorAlert, setErrorAlert] = useState("none");
+  const [successAlert, setSuccessAlert] = useState("none");
 
   const handleLogin = useCallback(async (event) => {
     event.preventDefault();
@@ -13,10 +15,10 @@ const SignIn = () => {
     try {
       await firebase
         .auth()
-        .signInWithEmailAndPassword(email.value, password.value);
-      // .then(() => {
-      //   showSuccess();
-      // });
+        .signInWithEmailAndPassword(email.value, password.value)
+        .then(() => {
+          showSuccess();
+        });
     } catch (error) {
       console.error(error);
       showError();
@@ -29,23 +31,36 @@ const SignIn = () => {
       setErrorAlert("none");
     }, 3000);
   };
+  const showSuccess = () => {
+    setSuccessAlert("block");
+    setTimeout(() => {
+      setSuccessAlert("none");
+    }, 2000);
+  };
 
   return (
     <div className="form-container">
       <div className="Logo">
-        <h3>NATURL</h3>
+        <Link to="/">
+          <h3>NATURL</h3>
+        </Link>
       </div>
 
-      <div className="Form-Sign-Container">
-        <div className="Form-Sign-Container-Alert">
-          <Alert
-            message="Credentials Incorrect"
-            type="error"
-            style={{ display: errorAlert }}
-            showIcon={true}
-            closable
-          />
-        </div>
+      <div>
+        <Alert
+          message="Login Successful"
+          type="success"
+          style={{ display: successAlert }}
+          showIcon={true}
+          closable
+        />
+        <Alert
+          message="Credentials Incorrect"
+          type="error"
+          style={{ display: errorAlert }}
+          showIcon={true}
+          closable
+        />
       </div>
 
       <form onSubmit={handleLogin}>
@@ -78,4 +93,8 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+Login.propTypes = {
+  setUserProfile: PropTypes.func,
+};
+
+export default Login;

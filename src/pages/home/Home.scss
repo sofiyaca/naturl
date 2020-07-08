@@ -69,6 +69,7 @@
     margin-top: 250px;
     font-size: 45px;
   }
+  /* mobile */
   @media (max-width: 480px) {
     margin-top: 250px;
     font-size: 45px;
@@ -109,19 +110,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   padding: 0 5%;
   height: 300px;
 }
 
 .News_div {
   width: 40%;
-  margin-bottom: 60px;
-  // margin-right: 50px;
+  margin-right: 50px;
 }
 .News_div h1 {
-  // text-align: left;
-  // padding-left: 30px;
+  text-align: left;
+  padding-left: 30px;
   margin-bottom: 20px;
 }
 .News__Text {
@@ -152,7 +151,7 @@
 }
 .Email_input {
   height: 48px;
-  width: 40vw;
+  width: 300px;
   background-color: #fff;
   border-radius: 2px;
   padding-left: 10px;
@@ -177,15 +176,14 @@
 }
 
 .About__text {
-  // letter-spacing: 5%;
-  // line-height: 145%;
-  // width: 80%;
+  letter-spacing: 5%;
   text-align: center;
   margin: 40px auto;
+  line-height: 145%;
   font-size: 15pt;
+  width: 80%;
   margin-bottom: 100px;
   color: gray;
-  width: 65%;
 }
 
 .Main_Logo {
@@ -251,7 +249,7 @@
   }
   .News {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 100%;
     margin-right: 0px;
   }
@@ -266,9 +264,6 @@
   .News__Text {
     margin-top: 20px;
     text-align: center;
-    margin: 40px auto;
-    font-size: 15pt;
-    color: gray;
   }
 
   .column-card {
@@ -346,21 +341,4 @@
 
 .home-featuredproducts-header {
   margin-top: 50px;
-}
-
-.Home-EmailSignUp-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Home-EmailSignUp-container-alert {
-  position: absolute;
-  top: -50px;
-  width: 300px;
-
-  @media (max-width: 480px) {
-    top: -90px;
-    width: 170px;
-  }
 }
